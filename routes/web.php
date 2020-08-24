@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PostController@allPosts');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostController@validPost')->name('home');
 Route::get('/add-post', 'PostController@addPost');
 Route::post('/add-post', 'PostController@createPost')->name("post.add");
-Route::get('/all-posts', 'PostController@allPosts');
+Route::get('/single/{id}','PostController@singlePost');
+Route::get('/update-post/{id}','PostController@editPost');
+Route::post('/update-post', 'PostController@updatePost')->name("post.update");
+Route::get('/delete-post/{id}','PostController@deletePost');\
+Route::get('/status/{id}', 'PostController@statusChange')->name('status');
+
+
+

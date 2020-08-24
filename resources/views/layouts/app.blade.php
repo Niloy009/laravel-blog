@@ -41,7 +41,7 @@
                         <!-- Authentication Links -->
                      @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Category</a>
+                                <a class="nav-link btn btn-primary" href="{{ route('post.add') }}">Add post</a>
                             </li>
                         @endauth
                         @guest

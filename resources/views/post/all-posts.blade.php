@@ -13,27 +13,23 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <table class="table table-striped table-dark">
-                    <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($posts as $post)
-                        <tr>
-                            <td>{{$post->id}}</td>
-                            <td>{{$post->title}}</td>
-                            <td>{{$post->description}}</td>
+            <div class="col-lg-8 col-md-10 mx-auto">
 
-                        </tr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        @foreach($posts as $post)
+                            <h2 class="post-title">
+                                {{$post->title}}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{$post->description}}
+                            </h3>
+                    </a>
+                    <p class="post-meta">Posted by
+                        <a href="#">{{$post->userId}}</a>
+                        on September 24, 2019</p>
                     @endforeach
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
     </div>
